@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── PWSS Brand Palette ──────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Core brand colours */
+  --color-pwss-white: #efefef;
+  --color-pwss-gunmetal: #172d38;
+  --color-pwss-mint: #1cca98;
+  --color-pwss-aero: #5ac2df;
+  --color-pwss-cyan: #3c887e;
+
+  /* Gunmetal shades */
+  --color-pwss-gunmetal-100: #04090b;
+  --color-pwss-gunmetal-200: #091116;
+  --color-pwss-gunmetal-300: #0d1a21;
+  --color-pwss-gunmetal-400: #12232b;
+  --color-pwss-gunmetal-500: #172d38;
+  --color-pwss-gunmetal-600: #2f5d74;
+  --color-pwss-gunmetal-700: #488eb1;
+  --color-pwss-gunmetal-800: #84b4cd;
+  --color-pwss-gunmetal-900: #c1dae6;
+
+  /* Mint shades */
+  --color-pwss-mint-100: #06281f;
+  --color-pwss-mint-200: #0b513d;
+  --color-pwss-mint-300: #11795c;
+  --color-pwss-mint-400: #16a27a;
+  --color-pwss-mint-500: #1cca98;
+  --color-pwss-mint-600: #3ae4b4;
+  --color-pwss-mint-700: #6bebc7;
+  --color-pwss-mint-800: #9cf2d9;
+  --color-pwss-mint-900: #cef8ec;
+
+  /* Aero shades */
+  --color-pwss-aero-100: #0a2b34;
+  --color-pwss-aero-200: #145669;
+  --color-pwss-aero-300: #1e819d;
+  --color-pwss-aero-400: #28acd1;
+  --color-pwss-aero-500: #5ac2df;
+  --color-pwss-aero-600: #79cee6;
+  --color-pwss-aero-700: #9bdaec;
+  --color-pwss-aero-800: #bce7f2;
+  --color-pwss-aero-900: #def3f9;
+
+  /* Dark Cyan shades */
+  --color-pwss-cyan-100: #0c1b19;
+  --color-pwss-cyan-200: #183632;
+  --color-pwss-cyan-300: #23514b;
+  --color-pwss-cyan-400: #2f6c64;
+  --color-pwss-cyan-500: #3c887e;
+  --color-pwss-cyan-600: #4fb2a5;
+  --color-pwss-cyan-700: #7bc5bb;
+  --color-pwss-cyan-800: #a7d8d2;
+  --color-pwss-cyan-900: #d3ece8;
+
+  /* White shades */
+  --color-pwss-white-100: #303030;
+  --color-pwss-white-200: #606060;
+  --color-pwss-white-300: #909090;
+  --color-pwss-white-400: #c0c0c0;
+  --color-pwss-white-500: #efefef;
+  --color-pwss-white-600: #f3f3f3;
+  --color-pwss-white-700: #f6f6f6;
+  --color-pwss-white-800: #f9f9f9;
+  --color-pwss-white-900: #fcfcfc;
+
+  /* Fonts */
+  --font-heading: var(--font-montserrat), "Inter", system-ui, sans-serif;
+  --font-body: var(--font-inter), "Open Sans", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base Styles ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-pwss-white);
+  color: var(--color-pwss-gunmetal);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }

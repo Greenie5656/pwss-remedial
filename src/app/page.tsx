@@ -1,65 +1,71 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="p-8 space-y-8">
+      <h1 className="font-heading text-4xl font-extrabold text-pwss-gunmetal">
+        PWSS Colour & Font Test
+      </h1>
+      <p className="font-body text-lg text-pwss-gunmetal-600">
+        Body text in gunmetal-600 using Inter. If you can read this clearly, fonts are working.
+      </p>
+
+      {/* Colour swatches */}
+      <div className="grid grid-cols-5 gap-4">
+        <div className="h-24 rounded-lg bg-pwss-white border border-pwss-white-400 flex items-end p-2">
+          <span className="text-xs text-pwss-gunmetal">Anti-flash White</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="h-24 rounded-lg bg-pwss-gunmetal flex items-end p-2">
+          <span className="text-xs text-white">Gunmetal</span>
         </div>
-      </main>
-    </div>
+        <div className="h-24 rounded-lg bg-pwss-mint flex items-end p-2">
+          <span className="text-xs text-white">Mint</span>
+        </div>
+        <div className="h-24 rounded-lg bg-pwss-aero flex items-end p-2">
+          <span className="text-xs text-white">Aero</span>
+        </div>
+        <div className="h-24 rounded-lg bg-pwss-cyan flex items-end p-2">
+          <span className="text-xs text-white">Dark Cyan</span>
+        </div>
+      </div>
+
+      {/* Dark section test */}
+      <section className="bg-pwss-gunmetal rounded-xl p-8 space-y-4">
+        <h2 className="font-heading text-2xl font-bold text-white">
+          Dark Section — <span className="text-pwss-mint">Mint Accent</span>
+        </h2>
+        <p className="text-pwss-white/80">
+          Body text on dark background using rgba white. 
+          <span className="text-pwss-aero"> Aero link colour.</span>
+        </p>
+        <button className="bg-pwss-mint hover:bg-pwss-cyan text-white font-body font-semibold px-6 py-3 rounded transition-colors duration-200">
+          CTA Button (mint → cyan hover)
+        </button>
+      </section>
+
+      {/* Light section test */}
+      <section className="bg-pwss-white rounded-xl p-8 space-y-4">
+        <h2 className="font-heading text-2xl font-bold text-pwss-gunmetal">
+          Light Section Heading
+        </h2>
+        <p className="text-pwss-gunmetal-600">
+          Body copy on light background in gunmetal-600. This should be easy to read with good contrast.
+        </p>
+      </section>
+
+      {/* Shade strips */}
+      <div className="space-y-2">
+        <p className="text-sm font-semibold text-pwss-gunmetal">Gunmetal shades (100–900):</p>
+        <div className="flex gap-1">
+          {['bg-pwss-gunmetal-100','bg-pwss-gunmetal-200','bg-pwss-gunmetal-300','bg-pwss-gunmetal-400','bg-pwss-gunmetal-500','bg-pwss-gunmetal-600','bg-pwss-gunmetal-700','bg-pwss-gunmetal-800','bg-pwss-gunmetal-900'].map((c) => (
+            <div key={c} className={`${c} h-10 flex-1 rounded`} />
+          ))}
+        </div>
+        <p className="text-sm font-semibold text-pwss-gunmetal">Mint shades (100–900):</p>
+        <div className="flex gap-1">
+          {['bg-pwss-mint-100','bg-pwss-mint-200','bg-pwss-mint-300','bg-pwss-mint-400','bg-pwss-mint-500','bg-pwss-mint-600','bg-pwss-mint-700','bg-pwss-mint-800','bg-pwss-mint-900'].map((c) => (
+            <div key={c} className={`${c} h-10 flex-1 rounded`} />
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }

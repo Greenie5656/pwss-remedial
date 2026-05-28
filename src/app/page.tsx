@@ -1,54 +1,90 @@
 import HeroSwoosh from '@/components/shapes/HeroSwoosh';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
-import CardClip from '@/components/shapes/CardClip';
+import SectionWrapper from '@/components/ui/SectionWrapper';
+import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
+import PhoneLink from '@/components/ui/PhoneLink';
+import { CONTACT } from '@/lib/constants';
+import { Phone } from 'lucide-react';
 
 export default function Home() {
   return (
     <main>
-      {/* Hero with swoosh */}
-      <section className="relative bg-pwss-gunmetal min-h-[75vh] flex items-center justify-center">
+      {/* Hero */}
+      <section className="relative bg-pwss-gunmetal min-h-[75vh] flex items-center">
         <HeroSwoosh />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-white">
-            Remedial Waterproofing <span className="text-pwss-mint">Perth</span>
+        <Container className="relative z-10 pt-20">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white max-w-3xl">
+            Remedial Waterproofing{' '}
+            <span className="text-pwss-mint">Perth</span>
           </h1>
-          <p className="mt-4 text-white/70 text-lg">Shape components test page</p>
-        </div>
+          <p className="mt-4 text-white/70 text-lg max-w-xl">
+            Expert leak investigation and waterproofing repairs across residential
+            and commercial properties throughout Perth.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Button variant="primary" href="#contact" showArrow fullWidth>
+              Request a Quote
+            </Button>
+            <Button variant="secondary" href="#services" showArrow fullWidth>
+              Our Services
+            </Button>
+          </div>
+          <PhoneLink className="mt-6 inline-flex items-center gap-2 text-pwss-aero hover:text-pwss-mint transition-colors duration-200">
+            <Phone size={18} />
+            <span className="font-semibold">{CONTACT.phone}</span>
+          </PhoneLink>
+        </Container>
       </section>
 
-      {/* Swoosh divider — dark to light */}
       <DiagonalDivider direction="dark-to-light" variant="swoosh" />
 
       {/* Light section */}
-      <section className="bg-pwss-white py-20 flex items-center justify-center">
-        <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">Light Section (swoosh above)</h2>
-      </section>
+      <SectionWrapper theme="light" id="services">
+        <Container>
+          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">
+            Our <span className="text-pwss-mint">Services</span>
+          </h2>
+          <p className="mt-4 max-w-2xl">
+            Remedial waterproofing involves diagnosing and repairing existing
+            waterproofing failures in residential, commercial, and strata buildings.
+          </p>
+        </Container>
+      </SectionWrapper>
 
-      {/* V-cut divider — light to dark */}
       <DiagonalDivider direction="light-to-dark" variant="v-cut" />
 
       {/* Dark CTA banner */}
-      <section className="bg-pwss-gunmetal py-16 flex items-center justify-center">
-        <h2 className="font-heading text-2xl font-bold text-pwss-mint">CTA Banner (V-cut above)</h2>
-      </section>
+      <SectionWrapper theme="dark">
+        <Container className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <h2 className="font-heading text-2xl font-bold text-pwss-mint">
+            Not sure where the leak is coming from?
+          </h2>
+          <PhoneLink className="flex items-center gap-3 text-white hover:text-pwss-mint transition-colors duration-200">
+            <Phone size={22} className="text-pwss-aero" />
+            <span className="text-xl font-bold">{CONTACT.phone}</span>
+          </PhoneLink>
+        </Container>
+      </SectionWrapper>
 
-      {/* Angle divider — dark to light */}
-      <DiagonalDivider direction="dark-to-light" variant="angle" />
+      <DiagonalDivider direction="dark-to-light" variant="swoosh" />
 
-      {/* Light section with card clips */}
-      <section className="bg-pwss-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal mb-8">Card Clip Test (angle above)</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <CardClip accentColor="var(--color-pwss-mint)" className="bg-pwss-gunmetal rounded-xl h-48 flex items-center justify-center">
-              <p className="text-white font-semibold">Mint diagonal strip</p>
-            </CardClip>
-            <CardClip accentColor="var(--color-pwss-aero)" className="bg-pwss-gunmetal rounded-xl h-48 flex items-center justify-center">
-              <p className="text-white font-semibold">Aero diagonal strip</p>
-            </CardClip>
+      {/* Light section */}
+      <SectionWrapper theme="light" id="contact">
+        <Container className="text-center">
+          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">
+            Get a Free <span className="text-pwss-mint">Assessment</span>
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto">
+            Contact form will go here.
+          </p>
+          <div className="mt-8">
+            <Button variant="primary" href="tel:1300271425" showArrow>
+              Call {CONTACT.phone}
+            </Button>
           </div>
-        </div>
-      </section>
+        </Container>
+      </SectionWrapper>
     </main>
   );
 }

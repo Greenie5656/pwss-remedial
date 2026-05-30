@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
             </h2>
             <p className="mt-5 text-white/70 text-lg leading-relaxed">
               When waterproofing fails, you need a team that diagnoses the cause
-              — not one that patches the symptom. Here&apos;s what sets us apart
+              - not one that patches the symptom. Here&apos;s what sets us apart
               from general builders and maintenance contractors.
             </p>
           </div>

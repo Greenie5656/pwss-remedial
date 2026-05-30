@@ -4,6 +4,7 @@ import ServicesGrid from '@/components/sections/ServicesGrid';
 import CTABanner from '@/components/sections/CTABanner';
 import CaseStudies from '@/components/sections/CaseStudies';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
+import ServiceAreas from '@/components/sections/ServiceAreas';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Container from '@/components/ui/Container';
@@ -31,18 +32,15 @@ export default function Home() {
       <WhyChooseUs />
       <DiagonalDivider direction="dark-to-light" variant="swoosh" />
 
-      {/* Light — Service Areas placeholder */}
-      <SectionWrapper theme="light" id="service-areas">
-        <Container>
-          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">
-            Service Areas coming next
-          </h2>
-        </Container>
-      </SectionWrapper>
+      {/* Light */}
+      <ServiceAreas />
       <DiagonalDivider direction="light-to-dark" variant="angle" />
 
-      {/* Dark — CTA (moved here, between light sections) */}
-      <CTABanner />
+      {/* Dark — CTA */}
+      <CTABanner
+        heading="Water damage won't wait — neither should you."
+        subtext="Call now for a free site assessment anywhere in the Perth metro area."
+      />
       <DiagonalDivider direction="dark-to-light" variant="v-cut" />
 
       {/* Light — FAQ placeholder */}

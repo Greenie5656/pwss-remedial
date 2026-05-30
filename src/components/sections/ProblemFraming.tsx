@@ -1,7 +1,7 @@
 'use client';
 
 import { Droplets, AlertTriangle, SearchCheck, ShieldCheck } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
 
 const painPoints = [
@@ -27,7 +27,7 @@ const painPoints = [
   },
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,

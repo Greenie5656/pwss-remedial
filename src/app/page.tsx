@@ -6,9 +6,8 @@ import CaseStudies from '@/components/sections/CaseStudies';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import ServiceAreas from '@/components/sections/ServiceAreas';
 import FAQ from '@/components/sections/FAQ';
+import ContactForm from '@/components/sections/ContactForm';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import Container from '@/components/ui/Container';
 
 export default function Home() {
   return (
@@ -48,14 +47,8 @@ export default function Home() {
       <FAQ />
       <DiagonalDivider direction="light-to-dark" variant="swoosh" />
 
-      {/* Dark — Contact placeholder */}
-      <SectionWrapper theme="dark" id="contact">
-        <Container>
-          <h2 className="font-heading text-3xl font-bold text-white">
-            Contact form coming next
-          </h2>
-        </Container>
-      </SectionWrapper>
+      {/* Dark */}
+      <ContactForm />
     </main>
   );
 }

@@ -5,6 +5,7 @@ import CTABanner from '@/components/sections/CTABanner';
 import CaseStudies from '@/components/sections/CaseStudies';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import ServiceAreas from '@/components/sections/ServiceAreas';
+import FAQ from '@/components/sections/FAQ';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Container from '@/components/ui/Container';
@@ -43,11 +44,15 @@ export default function Home() {
       />
       <DiagonalDivider direction="dark-to-light" variant="v-cut" />
 
-      {/* Light — FAQ placeholder */}
-      <SectionWrapper theme="light" id="faq">
+      {/* Light */}
+      <FAQ />
+      <DiagonalDivider direction="light-to-dark" variant="swoosh" />
+
+      {/* Dark — Contact placeholder */}
+      <SectionWrapper theme="dark" id="contact">
         <Container>
-          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">
-            FAQ coming next
+          <h2 className="font-heading text-3xl font-bold text-white">
+            Contact form coming next
           </h2>
         </Container>
       </SectionWrapper>

@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/Hero';
+import ProblemFraming from '@/components/sections/ProblemFraming';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Container from '@/components/ui/Container';
@@ -10,10 +11,14 @@ export default function Home() {
 
       <DiagonalDivider direction="dark-to-light" variant="swoosh" />
 
-      {/* Placeholder — next section goes here */}
-      <SectionWrapper theme="light" id="services">
+      <ProblemFraming />
+
+      <DiagonalDivider direction="light-to-dark" variant="v-cut" />
+
+      {/* Placeholder — services section next */}
+      <SectionWrapper theme="dark" id="services">
         <Container>
-          <h2 className="font-heading text-3xl font-bold text-pwss-gunmetal">
+          <h2 className="font-heading text-3xl font-bold text-white">
             Services section coming next
           </h2>
         </Container>

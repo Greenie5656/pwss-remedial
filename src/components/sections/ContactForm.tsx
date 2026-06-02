@@ -28,6 +28,8 @@ const fadeUp: Variants = {
 export default function ContactForm() {
   const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -40,10 +42,43 @@ export default function ContactForm() {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
-    // TODO: Connect to email service / CRM
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+
+    const form = document.querySelector('#contact-form') as HTMLFormElement;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const res = await fetch('https://formspree.io/f/xlgvqzad', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: new FormData(form).get('name'),
+          phone: new FormData(form).get('phone'),
+          email: new FormData(form).get('email'),
+          'property-type': new FormData(form).get('property-type'),
+          suburb: new FormData(form).get('suburb'),
+          description: new FormData(form).get('description'),
+          'photos-attached': files.length > 0 ? `${files.length} photo(s) uploaded — request photos from client` : 'None',
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please call us directly or try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -82,8 +117,8 @@ export default function ContactForm() {
                   </p>
                 </div>
               </PhoneLink>
-
               <a
+              
                 href={`mailto:${CONTACT.email}`}
                 className="flex items-center gap-4 group"
               >
@@ -159,7 +194,7 @@ export default function ContactForm() {
                   Request a Quote
                 </h3>
 
-                <div onSubmit={handleSubmit}>
+                <form id="contact-form" onSubmit={handleSubmit}>
                   <div className="space-y-5">
                     {/* Name + Phone row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -299,12 +334,16 @@ export default function ContactForm() {
 
                     {/* Submit */}
                     <button
-                      type="button"
-                      onClick={handleSubmit}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-pwss-mint hover:bg-pwss-cyan text-white font-semibold rounded px-8 py-3.5 uppercase tracking-wider text-sm transition-colors duration-200"
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-pwss-mint hover:bg-pwss-cyan disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded px-8 py-3.5 uppercase tracking-wider text-sm transition-colors duration-200"
                     >
-                      Send Enquiry
+                      {isSubmitting ? 'Sending...' : 'Send Enquiry'}
                     </button>
+
+                    {error && (
+                      <p className="text-red-400 text-sm">{error}</p>
+                    )}
 
                     <p className="text-white/30 text-xs">
                       <AlertCircle size={12} className="inline mr-1 -mt-0.5" />
@@ -313,7 +352,7 @@ export default function ContactForm() {
                       information.
                     </p>
                   </div>
-                </div>
+                </form>
               </div>
             )}
           </motion.div>

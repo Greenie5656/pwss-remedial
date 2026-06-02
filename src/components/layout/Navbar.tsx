@@ -28,14 +28,25 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
+
+            {/* Logo — symbol on mobile, full logo on desktop */}
             <a href="/" className="flex-shrink-0">
+              {/* Symbol: mobile only */}
               <Image
-                src="/images/pwss-logo-transparent.png"
+                src="/Symbol-logo.png"
+                alt="PWSS Remedial Waterproofing Perth"
+                width={40}
+                height={40}
+                className="h-10 w-auto block lg:hidden"
+                priority
+              />
+              {/* Full logo: desktop only */}
+              <Image
+                src="/pwss-logo.png"
                 alt="PWSS Remedial Waterproofing Perth"
                 width={160}
                 height={48}
-                className="h-10 lg:h-12 w-auto"
+                className="h-10 lg:h-12 w-auto hidden lg:block"
                 priority
               />
             </a>
@@ -113,6 +124,7 @@ export default function Navbar() {
                 <Menu size={26} />
               </button>
             </div>
+
           </div>
         </div>
       </header>

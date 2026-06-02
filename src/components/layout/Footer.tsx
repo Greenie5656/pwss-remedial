@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="space-y-4">
             <a href="/">
               <Image
-                src="/images/pwss-logo-transparent.png"
+                src="/pwss-logo.png"
                 alt="PWSS Remedial Waterproofing Perth"
                 width={160}
                 height={48}
@@ -173,7 +173,7 @@ export default function Footer() {
           <p className="text-xs text-white/40">
             &copy; {currentYear} {COMPANY.legalName}. All rights reserved.
           </p>
-         <a 
+          <a
             href="#contact"
             className="flex items-center gap-2 text-pwss-mint hover:text-pwss-cyan text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
           >

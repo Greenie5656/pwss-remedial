@@ -21,7 +21,8 @@ export default function Footer() {
                 alt="PWSS Remedial Waterproofing Perth"
                 width={160}
                 height={48}
-                className="h-10 w-auto"
+               className=""
+                style={{ width: 'auto', height: '2.5rem' }}
               />
             </a>
             <p className="text-sm leading-relaxed">

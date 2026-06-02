@@ -8,10 +8,20 @@ import ServiceAreas from '@/components/sections/ServiceAreas';
 import FAQ from '@/components/sections/FAQ';
 import ContactForm from '@/components/sections/ContactForm';
 import DiagonalDivider from '@/components/shapes/DiagonalDivider';
+import { localBusinessSchema, serviceSchema } from '@/lib/schema';
 
 export default function Home() {
   return (
     <main>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Dark */}
       <Hero />
       <DiagonalDivider direction="dark-to-light" variant="swoosh" />

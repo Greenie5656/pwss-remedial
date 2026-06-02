@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { MapPin, CheckCircle, Clock } from 'lucide-react';
+import { MapPin, CheckCircle, } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -55,7 +55,7 @@ const caseStudies: CaseStudy[] = [
       'Concrete substrate preparation',
     ],
     summary:
-      'PWSS delivered a full waterproofing and anti-slip coating system for the grandstand at WA Hockey Stadium. The project involved meticulous substrate grinding to expose bare concrete pores, application of Adflex WBE primer, Rimseal 170 UV-stable membrane, and two coats of Deckpro 80 non-slip top coat - ensuring the venue is safe for public foot traffic and protected against Perth\'s intense UV exposure.',
+      'PWSS delivered a full waterproofing and anti-slip coating system for the grandstand at WA Hockey Stadium. The project involved meticulous substrate grinding to expose bare concrete pores, application of Adflex WBE primer, Rimseal 170 UV-stable membrane, and two coats of Deckpro 80 non-slip top coat — ensuring the venue is safe for public foot traffic and protected against Perth\'s intense UV exposure.',
     result:
       'High-performance waterproofing with a durable, non-slip, trafficable finish ready for top-level competition. Delivered on time with full client satisfaction.',
     accentColor: 'var(--color-pwss-mint)',
@@ -65,9 +65,24 @@ const caseStudies: CaseStudy[] = [
     location: 'East Perth, WA',
     photos: [
       {
-        src: '/images/case-studies/hockey-stadium-applying.jpg',
-        alt: 'Remedial waterproofing works at 2 Goderich Street commercial property in East Perth',
-        label: 'Overview',
+        src: '/images/case-studies/goderich-before.jpg',
+        alt: 'Original tiled walkway at 2 Goderich Street before remedial waterproofing works',
+        label: 'Before',
+      },
+      {
+        src: '/images/case-studies/goderich-demolition.jpg',
+        alt: 'PWSS team grinding substrate during walkway demolition at 2 Goderich Street East Perth',
+        label: 'Demolition',
+      },
+      {
+        src: '/images/case-studies/goderich-membrane.jpg',
+        alt: 'Completed waterproofing membrane on common walkway at 2 Goderich Street',
+        label: 'Membrane',
+      },
+      {
+        src: '/images/case-studies/goderich-finished.jpg',
+        alt: 'Finished over-tile waterproofing system on balcony at 2 Goderich Street East Perth',
+        label: 'Finished',
       },
     ],
     scope: [
@@ -78,10 +93,48 @@ const caseStudies: CaseStudy[] = [
       'Screed and ramp installation',
     ],
     summary:
-      'A multi-area remedial waterproofing project across a commercial property in East Perth. PWSS identified that the existing topping screed could not be waterproofed over, requiring full epoxy screed replacement. Steps were converted to ramps, and a 5-coat over-tile system was proposed for the balcony areas - saving the client approximately $30,000 compared to full screed removal.',
+      'A multi-area remedial waterproofing project across a commercial property in East Perth. PWSS identified that the existing topping screed could not be waterproofed over, requiring full epoxy screed replacement. Steps were converted to ramps, and a 5-coat over-tile system was proposed for the balcony areas, saving the client approximately $30,000 compared to full screed removal.',
     result:
       'Comprehensive waterproofing across walkways, balconies, bin stores, and roof plant. PWSS installed additional screeds at their own cost where ponding water was discovered during the works.',
     accentColor: 'var(--color-pwss-aero)',
+  },
+  {
+    title: 'Strata Complex Remediation',
+    location: 'Hillarys, WA',
+    photos: [
+      {
+        src: '/images/case-studies/hillarys-before.jpg',
+        alt: 'Deteriorated walkway and exposed concrete before remediation at Hillarys strata complex',
+        label: 'Before',
+      },
+      {
+        src: '/images/case-studies/hillarys-preparation.jpg',
+        alt: 'Substrate preparation and power washing at Hillarys strata complex',
+        label: 'Preparation',
+      },
+      {
+        src: '/images/case-studies/hillarys-waterproofing.jpg',
+        alt: 'WPA Aqualay waterproofing membrane installation across 1000m² of walkways in Hillarys',
+        label: 'Waterproofing',
+      },
+      {
+        src: '/images/case-studies/hillarys-finished.jpg',
+        alt: 'Completed tiled walkways and communal areas at Hillarys strata complex',
+        label: 'Finished',
+      },
+    ],
+    scope: [
+      'Over 1,000m² of remediation works',
+      'Tile and paver removal',
+      'Drainage repairs and fall correction',
+      'WPA Aqualay waterproofing system',
+      'Full re-tiling of all areas',
+    ],
+    summary:
+      'PWSS was engaged to remediate and waterproof more than 1,000m² of external walkways and communal areas at a strata complex in Hillarys. The project involved removal of existing tiles and pavers, mechanical grinding to remove residual adhesives, drainage rectification, and re-profiling of concrete to create compliant falls. A full WPA Aqualay waterproofing system was installed with critical detailing to drains, penetrations, movement joints, and perimeter upstands.',
+    result:
+      'A fully remediated and waterproofed external environment with new tiling across all walkways and communal areas. Durable, compliant, and built for long-term performance.',
+    accentColor: 'var(--color-pwss-cyan)',
   },
 ];
 
@@ -102,6 +155,7 @@ function PhotoGrid({ photos }: { photos: CaseStudyPhoto[] }) {
           src={photos[0].src}
           alt={photos[0].alt}
           fill
+          unoptimized
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
@@ -118,6 +172,7 @@ function PhotoGrid({ photos }: { photos: CaseStudyPhoto[] }) {
               src={photo.src}
               alt={photo.alt}
               fill
+              unoptimized
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 25vw"
             />
@@ -248,24 +303,6 @@ export default function CaseStudies() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Placeholder — third case study */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-60px' }}
-              variants={fadeUp}
-              className="bg-white rounded-xl border-2 border-dashed border-pwss-white-400 p-8 md:p-12 text-center"
-            >
-              <Clock size={32} className="text-pwss-white-300 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-bold text-pwss-gunmetal-600/40 mb-2">
-                More Projects Coming Soon
-              </h3>
-              <p className="text-sm text-pwss-gunmetal-600/40 max-w-md mx-auto">
-                We&apos;re currently documenting additional case studies from recent
-                remedial waterproofing projects across Perth.
-              </p>
-            </motion.div>
           </div>
 
           {/* Bottom CTA */}

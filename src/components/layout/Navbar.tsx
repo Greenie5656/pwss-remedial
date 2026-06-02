@@ -37,7 +37,8 @@ export default function Navbar() {
                 alt="PWSS Remedial Waterproofing Perth"
                 width={40}
                 height={40}
-                className="h-10 w-auto block lg:hidden"
+                className="block lg:hidden"
+                style={{ width: 'auto', height: '2.5rem' }}
                 priority
               />
               {/* Full logo: desktop only */}
@@ -46,7 +47,8 @@ export default function Navbar() {
                 alt="PWSS Remedial Waterproofing Perth"
                 width={160}
                 height={48}
-                className="h-10 lg:h-12 w-auto hidden lg:block"
+                className="hidden lg:block"
+                style={{ width: 'auto', height: '2.5rem' }}
                 priority
               />
             </a>

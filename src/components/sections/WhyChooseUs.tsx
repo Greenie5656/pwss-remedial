@@ -18,10 +18,10 @@ const reasons = [
     title: 'Documented Scope Reports',
     text: 'Every project receives a detailed scope of works with photographic evidence, product specifications, and clear pricing. Ideal for strata managers needing committee approval.',
   },
-  {
+{
     icon: Shield,
     title: 'Backed by PWSS',
-    text: 'Remedial Waterproofing Perth is a division of Perth Waterproofing & Silicone Solutions - a licensed, certified, and insured team with a proven track record across Perth.',
+    text: 'Remedial Waterproofing Perth is a division of Perth Waterproofing & Silicone Solutions - operating for over 8 years and trusted by some of Western Australia\'s largest builders, contractors, and home builders.',
   },
   {
     icon: Wrench,

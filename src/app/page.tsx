@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* Dark — CTA */}
       <CTABanner
-        heading="Water damage won't wait — neither should you."
+        heading="Water damage won't wait. Neither should you."
         subtext="Call now for a free site assessment anywhere in the Perth metro area."
       />
       <DiagonalDivider direction="dark-to-light" variant="v-cut" />
@@ -49,6 +49,10 @@ export default function Home() {
 
       {/* Dark */}
       <ContactForm />
+
+      {/* Contact / Footer divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-pwss-mint/40 to-transparent" aria-hidden="true" />
+      
     </main>
   );
 }

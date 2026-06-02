@@ -45,11 +45,11 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/60">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-pwss-mint" aria-hidden="true" />
-              Licensed &amp; Certified
+              {COMPANY.yearsExperience}+ Years Experience
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-pwss-mint" aria-hidden="true" />
-              {COMPANY.tagline}
+              Licensed &amp; Certified
             </span>
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-pwss-mint" aria-hidden="true" />

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, ChevronRight } from 'lucide-react';
-import { CONTACT, LINKS, COMPANY, SERVICES } from '@/lib/constants';
+import { CONTACT, LINKS, COMPANY, SERVICES, PARTNERS } from '@/lib/constants';
 import PhoneLink from '@/components/ui/PhoneLink';
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -157,13 +158,29 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Accreditation bar — placeholder for logos */}
+{/* Partner & accreditation bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-xs text-white/40 text-center">
-            {/* Replace with actual logo images when provided */}
-            Members of the Australian Institute of Waterproofing &amp; Master Builders Association
+          <p className="text-xs text-white/40 text-center mb-4 uppercase tracking-widest">
+            Trusted Products &amp; Accreditations
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {PARTNERS.map((partner) => (
+             <a 
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-50 hover:opacity-80 transition-opacity duration-200"
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-10 w-auto rounded bg-white p-1"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Phone } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import PhoneLink from '@/components/ui/PhoneLink';
@@ -11,20 +12,29 @@ interface CTABannerProps {
 
 export default function CTABanner({
   heading = 'Not sure where the leak is coming from?',
-  subtext = 'Our team will investigate the source - not just treat the symptom.',
+  subtext = 'Our team will investigate the source, not just treat the symptom.',
 }: CTABannerProps) {
   return (
     <section className="bg-pwss-gunmetal py-10 md:py-14" aria-label="Call to action">
       <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-          {/* Left — question */}
-          <div className="text-center lg:text-left">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-pwss-mint">
-              {heading}
-            </h2>
-            <p className="mt-2 text-white/60 text-sm md:text-base">
-              {subtext}
-            </p>
+          {/* Left — logo + question */}
+          <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+            <Image
+              src="/images/pwss-logo-full.jpg"
+              alt="Perth Waterproofing & Silicone Solutions"
+              width={160}
+              height={48}
+              className="h-12 w-auto rounded"
+            />
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-pwss-mint">
+                {heading}
+              </h2>
+              <p className="mt-2 text-white/60 text-sm md:text-base">
+                {subtext}
+              </p>
+            </div>
           </div>
 
           {/* Right — CTAs */}

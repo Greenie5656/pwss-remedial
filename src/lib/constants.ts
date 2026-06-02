@@ -32,6 +32,9 @@ export const COMPANY = {
   tagline: 'A Reputation for Quality and Detail',
   description:
     'Remedial Waterproofing Perth is a division of Perth Waterproofing & Silicone Solutions, specialising in waterproofing failure investigations and long-term repair solutions across the Perth metro area.',
+  yearsExperience: 8,
+  credibility:
+    'Our parent company has been operating for over 8 years, working with some of Western Australia\'s largest builders, contractors, and home builders.',
 } as const;
 
 // ─── Navigation ──────────────────────────────────────────────
@@ -78,3 +81,15 @@ export const META = {
     'Expert remedial waterproofing in Perth. Leak investigation, membrane replacement, balcony repairs & more. Backed by Perth Waterproofing & Silicone Solutions. Call 1300 271 425.',
   ogImage: '/images/og-image.jpg',
 } as const;
+
+// ─── Partner / Supplier Logos ────────────────────────────────
+export const PARTNERS = [
+  {
+    name: 'Fosroc',
+    logo: '/images/partners/fosroc.jpg',
+    url: 'https://www.fosroc.com',
+  },
+  // Add more as Jacko sends them:
+  // { name: 'AIW', logo: '/images/partners/aiw.png', url: '...' },
+  // { name: 'Master Builders', logo: '/images/partners/master-builders.png', url: '...' },
+] as const;

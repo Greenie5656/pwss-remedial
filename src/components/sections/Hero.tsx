@@ -2,6 +2,7 @@
 
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import HeroSwoosh from '@/components/shapes/HeroSwoosh';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -14,6 +15,18 @@ export default function Hero() {
       className="relative bg-pwss-gunmetal min-h-[75vh] flex items-center overflow-hidden"
       aria-label="Hero"
     >
+      {/* Background image */}
+      <Image
+        src="/hero.webp"
+        alt="Waterproofing remedial work in Perth"
+        fill
+        className="object-cover"
+        priority
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#112233]/65" aria-hidden="true" />
+
       <HeroSwoosh />
 
       <Container className="relative z-10 pt-24 pb-16 lg:pt-32 lg:pb-24">

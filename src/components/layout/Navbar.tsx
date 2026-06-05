@@ -46,7 +46,7 @@ export default function Navbar() {
                 width={160}
                 height={48}
                 className="hidden lg:block"
-                style={{ width: 'auto', height: '4rem' }}
+                style={{ width: 'auto', height: '4.75rem' }}
                 priority
               />
             </a>

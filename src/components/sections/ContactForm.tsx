@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Mail, Clock, MapPin, Upload, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import PhoneLink from '@/components/ui/PhoneLink';
@@ -26,23 +26,11 @@ const fadeUp: Variants = {
 };
 
 export default function ContactForm() {
-  const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files);
-      setFiles((prev) => [...prev, ...newFiles].slice(0, 5));
-    }
-  };
-
-  const removeFile = (index: number) => {
-    setFiles((prev) => prev.filter((_, i) => i !== index));
-  };
-
-const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
+  const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
@@ -68,7 +56,6 @@ const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
           'property-type': new FormData(form).get('property-type'),
           suburb: new FormData(form).get('suburb'),
           description: new FormData(form).get('description'),
-          'photos-attached': files.length > 0 ? `${files.length} photo(s) uploaded — request photos from client` : 'None',
         }),
       });
 
@@ -287,49 +274,6 @@ const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
                         className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-pwss-mint focus:ring-1 focus:ring-pwss-mint transition-colors duration-200 resize-y"
                         placeholder="Where is the leak? How long has it been happening? Any previous repair attempts?"
                       />
-                    </div>
-
-                    {/* File upload */}
-                    <div>
-                      <label className="block text-sm font-medium text-white/60 mb-1.5">
-                        Upload photos of the damage (optional, max 5)
-                      </label>
-                      <label
-                        htmlFor="file-upload"
-                        className="flex items-center justify-center gap-3 w-full border-2 border-dashed border-white/15 rounded-lg px-4 py-5 cursor-pointer hover:border-pwss-mint/40 transition-colors duration-200"
-                      >
-                        <Upload size={20} className="text-white/30" />
-                        <span className="text-sm text-white/40">
-                          Click to upload or drag photos here
-                        </span>
-                        <input
-                          type="file"
-                          id="file-upload"
-                          name="files"
-                          multiple
-                          accept="image/*,.pdf"
-                          onChange={handleFileChange}
-                          className="sr-only"
-                        />
-                      </label>
-
-                      {/* File list */}
-                      {files.length > 0 && (
-                        <ul className="mt-3 space-y-2">
-                          {files.map((file, i) => (
-                            <li key={`${file.name}-${i}`} className="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
-                              <span className="text-sm text-white/60 truncate mr-3">{file.name}</span>
-                              <button
-                                type="button"
-                                onClick={() => removeFile(i)}
-                                className="text-white/30 hover:text-red-400 text-xs flex-shrink-0 transition-colors duration-200"
-                              >
-                                Remove
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
                     </div>
 
                     {/* Submit */}

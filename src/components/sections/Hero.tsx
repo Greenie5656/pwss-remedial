@@ -24,8 +24,9 @@ export default function Hero() {
         priority
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#112233]/65" aria-hidden="true" />
+      {/* Dark overlay — base tint + stronger gradient on the text side */}
+      <div className="absolute inset-0 bg-[#112233]/70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#112233]/60 via-[#112233]/20 to-transparent" aria-hidden="true" />
 
       <HeroSwoosh />
 

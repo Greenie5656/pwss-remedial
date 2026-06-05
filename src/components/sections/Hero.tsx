@@ -38,18 +38,18 @@ export default function Hero() {
           className="max-w-3xl"
         >
           {/* Trust line */}
-          <p className="text-pwss-aero text-sm font-semibold uppercase tracking-widest mb-4">
+          <p className="text-pwss-aero text-sm font-semibold uppercase tracking-widest mb-4 text-shadow-soft">
             Backed by Perth Waterproofing &amp; Silicone Solutions
           </p>
 
           {/* H1 — primary keyword */}
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight text-shadow-hero">
             Remedial Waterproofing{' '}
             <span className="text-pwss-mint">Perth</span>
           </h1>
 
           {/* Value proposition */}
-          <p className="mt-5 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
+          <p className="mt-5 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed text-shadow-soft">
             Expert leak investigation and waterproofing failure repairs for
             residential, commercial, and strata properties across the Perth
             metro area.

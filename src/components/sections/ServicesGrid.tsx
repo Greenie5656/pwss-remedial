@@ -101,7 +101,7 @@ const fadeUp: Variants = {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="bg-pwss-gunmetal py-12 md:py-16 lg:py-20" aria-label="Our services">
+    <section id="services" className="bg-pwss-gunmetal texture-dark py-12 md:py-16 lg:py-20" aria-label="Our services">
       <Container>
         <article>
           <div className="max-w-3xl">

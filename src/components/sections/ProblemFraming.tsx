@@ -38,7 +38,7 @@ const fadeUp: Variants = {
 
 export default function ProblemFraming() {
   return (
-    <section id="what-is-remedial" className="bg-pwss-white py-12 md:py-16 lg:py-20" aria-label="What is remedial waterproofing">
+    <section id="what-is-remedial" className="bg-pwss-white texture-light py-12 md:py-16 lg:py-20" aria-label="What is remedial waterproofing">
       <Container>
         <article>
           {/* Definition — front-loaded for AI extraction */}

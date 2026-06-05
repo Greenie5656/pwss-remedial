@@ -141,7 +141,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-pwss-white py-12 md:py-16 lg:py-20" aria-label="Frequently asked questions">
+    <section id="faq" className="bg-pwss-white texture-light py-12 md:py-16 lg:py-20" aria-label="Frequently asked questions">
       {/* FAQ Schema */}
       <script
         type="application/ld+json"

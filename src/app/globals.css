@@ -69,6 +69,24 @@
   --font-body: var(--font-inter), "Open Sans", system-ui, sans-serif;
 }
 
+/* ─── Texture utilities ───────────────────────────────────── */
+.texture-dark {
+  background-image: radial-gradient(rgba(254,253,254,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.texture-light {
+  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ─── Hero text shadows ───────────────────────────────────── */
+.text-shadow-hero {
+  text-shadow: 0 2px 16px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);
+}
+.text-shadow-soft {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+}
+
 /* ─── Base Styles ─────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;

@@ -69,7 +69,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="bg-pwss-gunmetal py-12 md:py-16 lg:py-20" aria-label="Contact us">
+    <section id="contact" className="bg-pwss-gunmetal texture-dark py-12 md:py-16 lg:py-20" aria-label="Contact us">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
 

@@ -23,7 +23,7 @@ const services = [
     name: 'Leak Investigation',
     priority: 'primary' as const,
     description:
-      'Systematic investigation to trace water ingress back to its source — not just where it appears. We use methodical testing to identify the exact failure point before any repair begins.',
+      'Systematic investigation to trace water ingress back to its source - not just where it appears. We use methodical testing to identify the exact failure point before any repair begins.',
   },
   {
     icon: Layers,

@@ -75,13 +75,13 @@
   background-size: 18px 18px;
 }
 .texture-light {
-  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), url('/BG.webp');
+  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), url('/BG.jpeg');
   background-size: 18px 18px, cover;
   background-position: 0 0, center;
 }
 
 .bg-image-light {
-  background-image: url('/BG.webp');
+  background-image: url('/BG.jpeg');
   background-size: cover;
   background-position: center;
 }

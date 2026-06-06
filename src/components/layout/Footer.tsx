@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-pwss-white text-pwss-gunmetal/80">
+    <footer className="bg-pwss-white bg-branded-texture text-pwss-gunmetal/80">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -182,6 +182,30 @@ export default function Footer() {
               </a>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Lancashire Web Fixers credit */}
+      <div className="border-t border-pwss-gunmetal/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <span className="text-xs text-pwss-gunmetal/40">
+            Built for SEO, Google Ads and AI SEO by
+          </span>
+          <a
+            href="https://www.lancashirewebfixers.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Lancashire Web Fixers"
+            className="opacity-50 hover:opacity-80 transition-opacity duration-200"
+          >
+            <Image
+              src="/FullLogo_resized.png"
+              alt="Lancashire Web Fixers"
+              width={140}
+              height={36}
+              style={{ width: 'auto', height: '2rem' }}
+            />
+          </a>
         </div>
       </div>
 

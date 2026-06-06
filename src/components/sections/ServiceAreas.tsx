@@ -29,7 +29,7 @@ const fadeUp: Variants = {
 
 export default function ServiceAreas() {
   return (
-    <section id="service-areas" className="bg-pwss-white py-12 md:py-16 lg:py-20" aria-label="Service areas">
+    <section id="service-areas" className="bg-brand-texture py-12 md:py-16 lg:py-20" aria-label="Service areas">
       <Container>
         <article>
           <div className="max-w-3xl">

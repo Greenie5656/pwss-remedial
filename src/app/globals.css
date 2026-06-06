@@ -79,6 +79,18 @@
   background-size: 18px 18px;
 }
 
+/* ─── Brand water-texture background (light sections) ────── */
+.bg-brand-texture {
+  background-color: var(--color-pwss-white);
+  background-image:
+    radial-gradient(rgba(17,34,51,0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.91)),
+    url('/BG.webp');
+  background-size: 18px 18px, auto, cover;
+  background-position: top left, center, center;
+  background-repeat: repeat, no-repeat, no-repeat;
+}
+
 /* ─── Hero text shadows ───────────────────────────────────── */
 .text-shadow-hero {
   text-shadow: 0 2px 16px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);

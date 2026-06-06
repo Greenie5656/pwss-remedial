@@ -185,6 +185,30 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Lancashire Web Fixers credit */}
+      <div className="bg-pwss-gunmetal border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <span className="text-xs text-white/50 whitespace-nowrap">
+            Built for SEO, Google Ads and AI SEO by
+          </span>
+          <a
+            href="https://www.lancashirewebfixers.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-70 hover:opacity-100 transition-opacity duration-200 flex-shrink-0"
+            aria-label="Lancashire Web Fixers"
+          >
+            <Image
+              src="/FullLogo_resized.png"
+              alt="Lancashire Web Fixers"
+              width={140}
+              height={32}
+              style={{ width: 'auto', height: '2rem' }}
+            />
+          </a>
+        </div>
+      </div>
+
       {/* Copyright bar */}
       <div className="border-t border-pwss-gunmetal/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">

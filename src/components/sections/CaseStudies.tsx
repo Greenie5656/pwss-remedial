@@ -190,7 +190,7 @@ function PhotoGrid({ photos }: { photos: CaseStudyPhoto[] }) {
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="bg-pwss-white py-12 md:py-16 lg:py-20" aria-label="Case studies">
+    <section id="case-studies" className="bg-brand-texture py-12 md:py-16 lg:py-20" aria-label="Case studies">
       <Container>
         <article>
           <div className="max-w-3xl">

@@ -84,7 +84,7 @@
   background-color: var(--color-pwss-white);
   background-image:
     radial-gradient(rgba(17,34,51,0.04) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.91)),
+    linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.96)),
     url('/BG.webp');
   background-size: 18px 18px, auto, cover;
   background-position: top left, center, center;

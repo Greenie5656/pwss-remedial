@@ -23,7 +23,7 @@ const services = [
     name: 'Leak Investigation',
     priority: 'primary' as const,
     description:
-      'Systematic investigation to trace water ingress back to its source — not just where it appears. We use methodical testing to identify the exact failure point before any repair begins.',
+      'Systematic investigation to trace water ingress back to its source - not just where it appears. We use methodical testing to identify the exact failure point before any repair begins.',
   },
   {
     icon: Layers,
@@ -101,7 +101,7 @@ const fadeUp: Variants = {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="bg-pwss-gunmetal py-12 md:py-16 lg:py-20" aria-label="Our services">
+    <section id="services" className="bg-pwss-gunmetal texture-dark py-12 md:py-16 lg:py-20" aria-label="Our services">
       <Container>
         <article>
           <div className="max-w-3xl">

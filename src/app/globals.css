@@ -3,33 +3,33 @@
 /* ─── PWSS Brand Palette ──────────────────────────────────── */
 @theme inline {
   /* Core brand colours */
-  --color-pwss-white: #efefef;
-  --color-pwss-gunmetal: #172d38;
-  --color-pwss-mint: #1cca98;
+  --color-pwss-white: #fefdfe;
+  --color-pwss-gunmetal: #112233;
+  --color-pwss-mint: #005ebe;
   --color-pwss-aero: #5ac2df;
-  --color-pwss-cyan: #3c887e;
+  --color-pwss-cyan: #191919;
 
   /* Gunmetal shades */
-  --color-pwss-gunmetal-100: #04090b;
-  --color-pwss-gunmetal-200: #091116;
-  --color-pwss-gunmetal-300: #0d1a21;
-  --color-pwss-gunmetal-400: #12232b;
-  --color-pwss-gunmetal-500: #172d38;
-  --color-pwss-gunmetal-600: #2f5d74;
-  --color-pwss-gunmetal-700: #488eb1;
-  --color-pwss-gunmetal-800: #84b4cd;
-  --color-pwss-gunmetal-900: #c1dae6;
+  --color-pwss-gunmetal-100: #020507;
+  --color-pwss-gunmetal-200: #040a0e;
+  --color-pwss-gunmetal-300: #071016;
+  --color-pwss-gunmetal-400: #0a1a29;
+  --color-pwss-gunmetal-500: #112233;
+  --color-pwss-gunmetal-600: #1a4066;
+  --color-pwss-gunmetal-700: #2260a0;
+  --color-pwss-gunmetal-800: #6699cc;
+  --color-pwss-gunmetal-900: #b3cce6;
 
-  /* Mint shades */
-  --color-pwss-mint-100: #06281f;
-  --color-pwss-mint-200: #0b513d;
-  --color-pwss-mint-300: #11795c;
-  --color-pwss-mint-400: #16a27a;
-  --color-pwss-mint-500: #1cca98;
-  --color-pwss-mint-600: #3ae4b4;
-  --color-pwss-mint-700: #6bebc7;
-  --color-pwss-mint-800: #9cf2d9;
-  --color-pwss-mint-900: #cef8ec;
+  /* Mint (Tech Blue) shades */
+  --color-pwss-mint-100: #001226;
+  --color-pwss-mint-200: #00234d;
+  --color-pwss-mint-300: #003573;
+  --color-pwss-mint-400: #00479a;
+  --color-pwss-mint-500: #005ebe;
+  --color-pwss-mint-600: #1a74d4;
+  --color-pwss-mint-700: #5599e0;
+  --color-pwss-mint-800: #8fbdec;
+  --color-pwss-mint-900: #c7def5;
 
   /* Aero shades */
   --color-pwss-aero-100: #0a2b34;
@@ -42,31 +42,56 @@
   --color-pwss-aero-800: #bce7f2;
   --color-pwss-aero-900: #def3f9;
 
-  /* Dark Cyan shades */
-  --color-pwss-cyan-100: #0c1b19;
-  --color-pwss-cyan-200: #183632;
-  --color-pwss-cyan-300: #23514b;
-  --color-pwss-cyan-400: #2f6c64;
-  --color-pwss-cyan-500: #3c887e;
-  --color-pwss-cyan-600: #4fb2a5;
-  --color-pwss-cyan-700: #7bc5bb;
-  --color-pwss-cyan-800: #a7d8d2;
-  --color-pwss-cyan-900: #d3ece8;
+  /* Carbon Black shades */
+  --color-pwss-cyan-100: #050505;
+  --color-pwss-cyan-200: #0a0a0a;
+  --color-pwss-cyan-300: #0f0f0f;
+  --color-pwss-cyan-400: #141414;
+  --color-pwss-cyan-500: #191919;
+  --color-pwss-cyan-600: #404040;
+  --color-pwss-cyan-700: #707070;
+  --color-pwss-cyan-800: #a0a0a0;
+  --color-pwss-cyan-900: #d0d0d0;
 
   /* White shades */
   --color-pwss-white-100: #303030;
   --color-pwss-white-200: #606060;
   --color-pwss-white-300: #909090;
   --color-pwss-white-400: #c0c0c0;
-  --color-pwss-white-500: #efefef;
-  --color-pwss-white-600: #f3f3f3;
-  --color-pwss-white-700: #f6f6f6;
-  --color-pwss-white-800: #f9f9f9;
-  --color-pwss-white-900: #fcfcfc;
+  --color-pwss-white-500: #fefdfe;
+  --color-pwss-white-600: #fefefe;
+  --color-pwss-white-700: #fefefe;
+  --color-pwss-white-800: #ffffff;
+  --color-pwss-white-900: #ffffff;
 
   /* Fonts */
   --font-heading: var(--font-montserrat), "Inter", system-ui, sans-serif;
   --font-body: var(--font-inter), "Open Sans", system-ui, sans-serif;
+}
+
+/* ─── Texture utilities ───────────────────────────────────── */
+.texture-dark {
+  background-image: radial-gradient(rgba(254,253,254,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.texture-light {
+  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-size: 18px 18px, cover, cover;
+  background-position: 0 0, center, center;
+}
+
+.bg-image-light {
+  background-image: linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ─── Hero text shadows ───────────────────────────────────── */
+.text-shadow-hero {
+  text-shadow: 0 2px 16px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);
+}
+.text-shadow-soft {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
 }
 
 /* ─── Base Styles ─────────────────────────────────────────── */

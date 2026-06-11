@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Phone } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import PhoneLink from '@/components/ui/PhoneLink';
@@ -18,15 +17,17 @@ export default function CTABanner({
     <section className="bg-pwss-gunmetal py-10 md:py-14" aria-label="Call to action">
       <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-          {/* Left — logo + question */}
+          {/* Left — brand wordmark + question */}
           <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-            <Image
-              src="/images/pwss-logo-full.jpg"
-              alt="Perth Waterproofing & Silicone Solutions"
-              width={160}
-              height={48}
-              className="h-12 w-auto rounded"
-            />
+            <div className="flex-shrink-0">
+              <p className="font-heading text-2xl font-extrabold text-pwss-white tracking-tight leading-none">
+                PWSS Remedial
+              </p>
+              <p className="font-heading text-xs font-medium text-pwss-aero uppercase tracking-widest mt-1">
+                Perth Waterproofing &amp; Silicone Solutions
+              </p>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/20" aria-hidden="true" />
             <div>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-pwss-mint">
                 {heading}

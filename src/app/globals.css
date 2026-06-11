@@ -75,8 +75,15 @@
   background-size: 18px 18px;
 }
 .texture-light {
-  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px);
-  background-size: 18px 18px;
+  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-size: 18px 18px, cover, cover;
+  background-position: 0 0, center, center;
+}
+
+.bg-image-light {
+  background-image: linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ─── Hero text shadows ───────────────────────────────────── */

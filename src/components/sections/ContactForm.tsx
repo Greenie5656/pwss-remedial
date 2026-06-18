@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
 import { Phone, Mail, Clock, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
@@ -60,6 +61,7 @@ export default function ContactForm() {
       });
 
       if (!res.ok) throw new Error('Failed to send');
+      sendGAEvent('event', 'generate_lead', { method: 'contact_form' });
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please call us directly or try again.');

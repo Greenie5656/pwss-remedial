@@ -6,6 +6,7 @@ import { Phone, Mail, Clock, MapPin, CheckCircle, AlertCircle } from 'lucide-rea
 import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import PhoneLink from '@/components/ui/PhoneLink';
+import EmailLink from '@/components/ui/EmailLink';
 import { CONTACT } from '@/lib/constants';
 
 const propertyTypes = [
@@ -106,8 +107,7 @@ export default function ContactForm() {
                   </p>
                 </div>
               </PhoneLink>
-              <a
-              
+              <EmailLink
                 href={`mailto:${CONTACT.email}`}
                 className="flex items-center gap-4 group"
               >
@@ -120,7 +120,7 @@ export default function ContactForm() {
                     {CONTACT.email}
                   </p>
                 </div>
-              </a>
+              </EmailLink>
 
               <div className="flex items-center gap-4">
                 <div className="w-11 h-11 rounded-lg bg-pwss-mint/10 border border-pwss-mint/20 flex items-center justify-center">

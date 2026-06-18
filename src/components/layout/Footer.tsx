@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, ChevronRight } from 'lucide-react';
 import { CONTACT, LINKS, COMPANY, SERVICES, PARTNERS } from '@/lib/constants';
 import PhoneLink from '@/components/ui/PhoneLink';
+import EmailLink from '@/components/ui/EmailLink';
+import OutboundLink from '@/components/ui/OutboundLink';
 
 
 export default function Footer() {
@@ -30,7 +32,7 @@ export default function Footer() {
               of Perth Waterproofing &amp; Silicone Solutions, specialising in waterproofing
               failure investigations and long-term repair solutions.
             </p>
-            <a
+            <OutboundLink
               href={LINKS.mainSite}
               target="_blank"
               rel="noopener noreferrer"
@@ -38,7 +40,7 @@ export default function Footer() {
             >
               Part of {COMPANY.shortName}
               <ChevronRight size={14} />
-            </a>
+            </OutboundLink>
           </div>
 
           {/* Column 2 — Services */}
@@ -112,13 +114,13 @@ export default function Footer() {
                 </PhoneLink>
               </li>
               <li>
-                <a
+                <EmailLink
                   href={`mailto:${CONTACT.email}`}
                   className="flex items-start gap-3 hover:text-pwss-mint transition-colors duration-200"
                 >
                   <Mail size={16} className="mt-0.5 flex-shrink-0 text-pwss-mint" />
                   <span className="text-sm">{CONTACT.email}</span>
-                </a>
+                </EmailLink>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0 text-pwss-aero" />
@@ -132,7 +134,7 @@ export default function Footer() {
 
             {/* Social icons */}
             <div className="flex gap-3 pt-2">
-              <a
+              <OutboundLink
                 href={LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -142,8 +144,8 @@ export default function Footer() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
-              </a>
-              <a
+              </OutboundLink>
+              <OutboundLink
                 href={LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -153,7 +155,7 @@ export default function Footer() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
-              </a>
+              </OutboundLink>
             </div>
           </div>
         </div>
@@ -167,7 +169,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {PARTNERS.map((partner) => (
-              <a
+              <OutboundLink
                 key={partner.name}
                 href={partner.url}
                 target="_blank"
@@ -179,7 +181,7 @@ export default function Footer() {
                   alt={partner.name}
                   className="h-10 w-auto rounded bg-white p-1"
                 />
-              </a>
+              </OutboundLink>
             ))}
           </div>
         </div>
@@ -191,7 +193,7 @@ export default function Footer() {
           <span className="text-xs text-white/50 whitespace-nowrap">
             Built for SEO, Google Ads and AI SEO by
           </span>
-          <a
+          <OutboundLink
             href="https://www.lancashirewebfixers.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
@@ -205,7 +207,7 @@ export default function Footer() {
               height={32}
               style={{ width: 'auto', height: '2rem' }}
             />
-          </a>
+          </OutboundLink>
         </div>
       </div>
 

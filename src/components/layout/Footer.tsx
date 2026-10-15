@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, ChevronRight } from 'lucide-react';
 import { CONTACT, LINKS, COMPANY, SERVICES, PARTNERS } from '@/lib/constants';
 import PhoneLink from '@/components/ui/PhoneLink';
@@ -17,7 +18,7 @@ export default function Footer() {
 
           {/* Column 1 — Brand */}
           <div className="space-y-4">
-            <a href="/">
+            <Link href="/">
               <Image
                 src="/pwss-logo.png"
                 alt="PWSS Remedial Waterproofing Perth"
@@ -26,13 +27,14 @@ export default function Footer() {
                 className=""
                 style={{ width: 'auto', height: '5rem' }}
               />
-            </a>
+            </Link>
             <p className="text-sm leading-relaxed">
               <strong className="text-pwss-gunmetal">Remedial Waterproofing Perth </strong> is a division
               of Perth Waterproofing &amp; Silicone Solutions, specialising in waterproofing
               failure investigations and long-term repair solutions.
             </p>
             <OutboundLink
+              location="footer"
               href={LINKS.mainSite}
               target="_blank"
               rel="noopener noreferrer"
@@ -108,13 +110,14 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <PhoneLink className="flex items-start gap-3 hover:text-pwss-mint transition-colors duration-200">
+                <PhoneLink location="footer" className="flex items-start gap-3 hover:text-pwss-mint transition-colors duration-200">
                   <Phone size={16} className="mt-0.5 flex-shrink-0 text-pwss-mint" />
                   <span className="text-sm font-semibold text-pwss-gunmetal">{CONTACT.phone}</span>
                 </PhoneLink>
               </li>
               <li>
                 <EmailLink
+                  location="footer"
                   href={`mailto:${CONTACT.email}`}
                   className="flex items-start gap-3 hover:text-pwss-mint transition-colors duration-200"
                 >
@@ -135,6 +138,7 @@ export default function Footer() {
             {/* Social icons */}
             <div className="flex gap-3 pt-2">
               <OutboundLink
+                location="footer"
                 href={LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -146,6 +150,7 @@ export default function Footer() {
                 </svg>
               </OutboundLink>
               <OutboundLink
+                location="footer"
                 href={LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -170,6 +175,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-8">
             {PARTNERS.map((partner) => (
               <OutboundLink
+                location="footer"
                 key={partner.name}
                 href={partner.url}
                 target="_blank"
@@ -194,6 +200,7 @@ export default function Footer() {
             Built for SEO, Google Ads and AI SEO by
           </span>
           <OutboundLink
+            location="footer"
             href="https://www.lancashirewebfixers.co.uk/"
             target="_blank"
             rel="noopener noreferrer"

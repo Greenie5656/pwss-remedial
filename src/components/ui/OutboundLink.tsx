@@ -9,6 +9,7 @@ interface OutboundLinkProps {
   rel?: string;
   'aria-label'?: string;
   children: React.ReactNode;
+  location?: string;
 }
 
 export default function OutboundLink({
@@ -18,6 +19,7 @@ export default function OutboundLink({
   rel,
   'aria-label': ariaLabel,
   children,
+  location = 'unspecified',
 }: OutboundLinkProps) {
   return (
     <a
@@ -26,7 +28,7 @@ export default function OutboundLink({
       target={target}
       rel={rel}
       aria-label={ariaLabel}
-      onClick={() => sendGAEvent('event', 'outbound_click', { destination_url: href })}
+      onClick={() => sendGAEvent('event', 'outbound_click', { destination_url: href, location })}
     >
       {children}
     </a>

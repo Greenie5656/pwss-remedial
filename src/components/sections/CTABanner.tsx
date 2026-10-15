@@ -43,7 +43,7 @@ export default function CTABanner({
             <Button variant="primary" href="#contact" showArrow>
               Book a Free Inspection
             </Button>
-            <PhoneLink className="flex items-center gap-3 text-white hover:text-pwss-mint transition-colors duration-200">
+            <PhoneLink location="cta_banner" className="flex items-center gap-3 text-white hover:text-pwss-mint transition-colors duration-200">
               <Phone size={20} className="text-pwss-aero" />
               <span className="text-lg font-bold">{CONTACT.phone}</span>
             </PhoneLink>

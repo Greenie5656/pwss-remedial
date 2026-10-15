@@ -76,7 +76,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
             {/* Bottom CTA area */}
             <div className="p-6 space-y-4 border-t border-white/10">
-              <PhoneLink className="flex items-center gap-3 text-pwss-aero hover:text-pwss-mint transition-colors duration-200">
+              <PhoneLink location="mobile_menu" className="flex items-center gap-3 text-pwss-aero hover:text-pwss-mint transition-colors duration-200">
                 <Phone size={20} />
                 <span className="text-lg font-semibold">{CONTACT.phone}</span>
               </PhoneLink>
@@ -92,6 +92,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               {/* Social links */}
               <div className="flex gap-3 pt-2">
                 <OutboundLink
+                  location="mobile_menu"
                   href={LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -103,6 +104,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   </svg>
                 </OutboundLink>
                 <OutboundLink
+                  location="mobile_menu"
                   href={LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"

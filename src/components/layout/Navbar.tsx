@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, Phone, ChevronRight } from 'lucide-react';
 import { NAV_ITEMS, CONTACT, LINKS } from '@/lib/constants';
 import PhoneLink from '@/components/ui/PhoneLink';
@@ -29,7 +30,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
 
             {/* Logo — symbol on mobile, full logo on desktop */}
-            <a href="/" className="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0">
               {/* Symbol: mobile only */}
               <Image
                 src="/Symbol-logo.png"
@@ -50,7 +51,7 @@ export default function Navbar() {
                 style={{ width: 'auto', height: '4.75rem' }}
                 priority
               />
-            </a>
+            </Link>
 
             {/* Desktop nav — centre */}
             <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
@@ -71,7 +72,7 @@ export default function Navbar() {
 
             {/* Right side — CTA + socials + phone */}
             <div className="hidden lg:flex items-center gap-4">
-              <PhoneLink className="flex items-center gap-2 text-pwss-gunmetal hover:text-pwss-mint transition-colors duration-200">
+              <PhoneLink location="header_desktop" className="flex items-center gap-2 text-pwss-gunmetal hover:text-pwss-mint transition-colors duration-200">
                 <Phone size={16} />
                 <span className="text-sm font-semibold">{CONTACT.phone}</span>
               </PhoneLink>
@@ -79,6 +80,7 @@ export default function Navbar() {
               {/* Social icons */}
               <div className="flex gap-2">
                 <OutboundLink
+                  location="header"
                   href={LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -90,6 +92,7 @@ export default function Navbar() {
                   </svg>
                 </OutboundLink>
                 <OutboundLink
+                  location="header"
                   href={LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -114,7 +117,7 @@ export default function Navbar() {
 
             {/* Mobile — phone + hamburger */}
             <div className="flex lg:hidden items-center gap-3">
-              <PhoneLink className="text-pwss-mint hover:text-pwss-mint-600 transition-colors duration-200">
+              <PhoneLink location="header_mobile" className="text-pwss-mint hover:text-pwss-mint-600 transition-colors duration-200">
                 <Phone size={22} />
               </PhoneLink>
               <button

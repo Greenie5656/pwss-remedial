@@ -82,7 +82,7 @@ export default function Hero() {
           </div>
 
           {/* Phone */}
-          <PhoneLink className="mt-6 inline-flex items-center gap-2 text-pwss-aero hover:text-pwss-mint transition-colors duration-200">
+          <PhoneLink location="hero" className="mt-6 inline-flex items-center gap-2 text-pwss-aero hover:text-pwss-mint transition-colors duration-200">
             <Phone size={18} />
             <span className="font-semibold text-lg">{CONTACT.phone}</span>
           </PhoneLink>

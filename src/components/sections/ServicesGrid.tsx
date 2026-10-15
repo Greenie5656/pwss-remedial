@@ -15,6 +15,7 @@ import {
 import { motion, type Variants } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import PhoneLink from '@/components/ui/PhoneLink';
 import { CONTACT } from '@/lib/constants';
 
 const services = [
@@ -159,12 +160,12 @@ export default function ServicesGrid() {
               Discuss Your Project
             </Button>
             <span className="text-white/40 text-sm">or call</span>
-            <a
-              href={CONTACT.phoneHref}
+            <PhoneLink
+              location="services"
               className="text-pwss-aero hover:text-pwss-mint text-lg font-bold transition-colors duration-200"
             >
               {CONTACT.phone}
-            </a>
+            </PhoneLink>
           </div>
         </article>
       </Container>

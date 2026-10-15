@@ -44,6 +44,15 @@ export default function ContactForm() {
       return;
     }
 
+    const data = new FormData(form);
+
+    // Honeypot: bots fill hidden fields. Show success but send nothing and fire no conversion.
+    if (data.get('_gotcha')) {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      return;
+    }
+
     try {
       const res = await fetch('https://formspree.io/f/mzdqawpz', {
         method: 'POST',
@@ -52,17 +61,22 @@ export default function ContactForm() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          name: new FormData(form).get('name'),
-          phone: new FormData(form).get('phone'),
-          email: new FormData(form).get('email'),
-          'property-type': new FormData(form).get('property-type'),
-          suburb: new FormData(form).get('suburb'),
-          description: new FormData(form).get('description'),
+          name: data.get('name'),
+          phone: data.get('phone'),
+          email: data.get('email'),
+          'property-type': data.get('property-type'),
+          suburb: data.get('suburb'),
+          description: data.get('description'),
+          _gotcha: data.get('_gotcha'),
         }),
       });
 
       if (!res.ok) throw new Error('Failed to send');
-      sendGAEvent('event', 'generate_lead', { method: 'contact_form' });
+      sendGAEvent('event', 'generate_lead', {
+        method: 'contact_form',
+        form_id: 'contact-form',
+        location: 'contact_section',
+      });
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please call us directly or try again.');
@@ -96,7 +110,7 @@ export default function ContactForm() {
 
             {/* Contact details */}
             <div className="mt-8 space-y-5">
-              <PhoneLink className="flex items-center gap-4 group">
+              <PhoneLink location="contact_section" className="flex items-center gap-4 group">
                 <div className="w-11 h-11 rounded-lg bg-pwss-mint/10 border border-pwss-mint/20 flex items-center justify-center group-hover:bg-pwss-mint/20 transition-colors duration-300">
                   <Phone size={20} className="text-pwss-mint" />
                 </div>
@@ -108,6 +122,7 @@ export default function ContactForm() {
                 </div>
               </PhoneLink>
               <EmailLink
+                location="contact_section"
                 href={`mailto:${CONTACT.email}`}
                 className="flex items-center gap-4 group"
               >
@@ -172,7 +187,7 @@ export default function ContactForm() {
                 <p className="text-white/60 max-w-md mx-auto">
                   Our team will review your details and get back to you within
                   one business day. For urgent leaks, call us directly on{' '}
-                  <PhoneLink className="text-pwss-aero hover:text-pwss-mint font-semibold transition-colors duration-200">
+                  <PhoneLink location="form_success" className="text-pwss-aero hover:text-pwss-mint font-semibold transition-colors duration-200">
                     {CONTACT.phone}
                   </PhoneLink>
                 </p>
@@ -184,6 +199,15 @@ export default function ContactForm() {
                 </h3>
 
                 <form id="contact-form" onSubmit={handleSubmit}>
+                  {/* Honeypot: hidden from people, filled by bots */}
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ display: 'none' }}
+                  />
                   <div className="space-y-5">
                     {/* Name + Phone row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -288,7 +312,7 @@ export default function ContactForm() {
                     </button>
 
                     {error && (
-                      <p className="text-red-400 text-sm">{error}</p>
+                      <p role="alert" className="text-red-400 text-sm">{error}</p>
                     )}
 
                     <p className="text-white/30 text-xs">

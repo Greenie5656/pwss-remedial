@@ -6,14 +6,15 @@ interface EmailLinkProps {
   href: string;
   className?: string;
   children: React.ReactNode;
+  location?: string;
 }
 
-export default function EmailLink({ href, className = '', children }: EmailLinkProps) {
+export default function EmailLink({ href, className = '', children, location = 'unspecified' }: EmailLinkProps) {
   return (
     <a
       href={href}
       className={className}
-      onClick={() => sendGAEvent('event', 'email_click', { email_address: href.replace('mailto:', '') })}
+      onClick={() => sendGAEvent('event', 'email_click', { email_address: href.replace('mailto:', ''), location })}
     >
       {children}
     </a>

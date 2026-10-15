@@ -75,13 +75,13 @@
   background-size: 18px 18px;
 }
 .texture-light {
-  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-image: radial-gradient(rgba(17,34,51,0.055) 1px, transparent 1px), linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.webp');
   background-size: 18px 18px, cover, cover;
   background-position: 0 0, center, center;
 }
 
 .bg-image-light {
-  background-image: linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.jpeg');
+  background-image: linear-gradient(rgba(254,253,254,0.88), rgba(254,253,254,0.88)), url('/BG.webp');
   background-size: cover;
   background-position: center;
 }
@@ -97,6 +97,13 @@
 /* ─── Base Styles ─────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* fixed header h-16 */
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5rem; /* fixed header lg:h-20 */
+  }
 }
 
 body {

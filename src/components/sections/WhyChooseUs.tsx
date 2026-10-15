@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
               Book a Free Inspection
             </Button>
             <span className="text-white/40 text-sm">or call</span>
-            <PhoneLink className="text-pwss-aero hover:text-pwss-mint text-lg font-bold transition-colors duration-200">
+            <PhoneLink location="why_choose_us" className="text-pwss-aero hover:text-pwss-mint text-lg font-bold transition-colors duration-200">
               {CONTACT.phone}
             </PhoneLink>
           </div>
